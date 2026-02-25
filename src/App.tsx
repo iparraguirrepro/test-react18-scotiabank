@@ -41,7 +41,7 @@ function App() {
           </p>
         </div>
 
-        <div className="relative mx-auto max-w-7xl px-4 ">
+        <div className="w-full sm:max-w-[800px] relative mx-auto max-w-7xl px-4 ">
           <div className="w-full py-5 pb-20">
             <ProductsFilter
               categories={getUnique(products.map((p) => p.category))}

@@ -31,7 +31,7 @@ export default function ProductCard({
 
   return (
     <div
-      className={`bg-red-50 relative overflow-hidden flex flex-col border-2 rounded-lg ${
+      className={`bg-red-50 relative overflow-hidden flex flex-col border-2 rounded-sm ${
         isInCart ? 'opacity-50' : 'border-transparent'
       } shadow-md group`}
     >
@@ -65,14 +65,14 @@ export default function ProductCard({
         {!isInCart ? (
           <button
             onClick={() => handleAddToCart()}
-            className="w-full mt-3 bg-[#ff090c] text-white py-2 rounded-sm text-sm font-semibold"
+            className="w-full mt-3 bg-[#ff090c] text-white py-2 rounded-sm text-xs font-semibold"
           >
             Agregar
           </button>
         ) : (
           <button
             onClick={() => handleRemoveFromCart()}
-            className="w-full mt-3 bg-white text-[#ff090c] py-2 rounded-sm text-sm font-semibold"
+            className="w-full mt-3 bg-white text-[#ff090c] py-2 rounded-sm text-xs font-semibold"
           >
             Eliminar del Carrito
           </button>

@@ -33,10 +33,6 @@ const productSlice = createSlice({
     setLoading: (state, action: PayloadAction<boolean>) => {
       state.loading = action.payload
     },
-    setError: (state, action: PayloadAction<string | null>) => {
-      state.error = action.payload
-      state.loading = false
-    },
     addProduct: (state, action: PayloadAction<Product>) => {
       state.items.push(action.payload)
     },
@@ -57,13 +53,9 @@ const productSlice = createSlice({
         state.items = action.payload
         state.error = null
       })
-      .addCase(fetchProducts.rejected, (state, action) => {
-        state.loading = false
-        state.error = action.payload as string
-      })
   }
 })
 
-export const { setProducts, setLoading, setError, addProduct, removeProduct } =
+export const { setProducts, setLoading, addProduct, removeProduct } =
   productSlice.actions
 export default productSlice.reducer

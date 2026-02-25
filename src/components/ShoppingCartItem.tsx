@@ -5,8 +5,8 @@ export default function ShoppingCartItem({
   onRemove
 }: ShoppingCartItemProps) {
   return (
-    <div className="bg-white rounded-lg shadow-sm p-1 flex items-center gap-4">
-      <div className="flex-shrink-0 w-20 h-20 bg-gray-100 rounded-lg flex items-center justify-center">
+    <div className="bg-white rounded-sm shadow-sm p-1 flex items-center gap-4">
+      <div className="flex-shrink-0 w-20 h-20 bg-gray-100 rounded-md flex items-center justify-center">
         <img src={item.image} alt={item.title} className="w-12 h-12" />
       </div>
 

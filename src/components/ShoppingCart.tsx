@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useAppDispatch, useAppSelector } from 'store/hooks'
-import { removeFromCart } from 'store/slices/cartSlice'
+import { clearCart, removeFromCart } from 'store/slices/cartSlice'
 import ShoppingCartItem from './ShoppingCartItem'
 import shoppingCartIcon from 'assets/images/icons/shopping-cart.svg'
 
@@ -11,6 +11,10 @@ export default function ShoppingCart() {
 
   const handleRemoveFromCart = (productId: number) => {
     dispatch(removeFromCart(productId))
+  }
+
+  const handleClearAll = () => {
+    dispatch(clearCart())
   }
 
   return !showCart ? (
@@ -67,12 +71,19 @@ export default function ShoppingCart() {
         </div>
 
         {cartItems.length > 0 && (
-          <div className="bg-white border-t border-gray-200 p-6">
+          <div className="bg-white border-t flex justify-between gap-2 border-gray-200 p-6">
             <button
               onClick={() => setShowCart(false)}
-              className="w-full bg-[#ff090c] text-white py-3 rounded-lg font-semibold border-2 border-[#ff090c]  hover:bg-white hover:text-[#ff090c] transition-colors"
+              className="w-full text-sm  bg-[#ff090c] text-white py-2 rounded-sm font-semibold border-2 border-[#ff090c]"
             >
               Continuar
+            </button>
+
+            <button
+              onClick={() => handleClearAll()}
+              className="w-full bg-white text-[#ff090c] py-2  text-sm rounded-sm font-semibold border-2 border-[#ff090c]"
+            >
+              Vaciar Carrito
             </button>
           </div>
         )}

@@ -33,7 +33,7 @@ export default function ProductsFilter({
 
   return (
     <div className="mb-4">
-      <div className="bg-gray-100 rounded-lg shadow-md p-6 mb-3">
+      <div className="bg-gray-100 rounded-sm shadow-md p-6 mb-3">
         <h3 className="text-xl font-semibold text-gray-900 mb-4">
           Filtrar Productos
         </h3>
@@ -83,7 +83,7 @@ export default function ProductsFilter({
           <button
             onClick={handleReset}
             disabled={searchName === '' && selectedCategory === ''}
-            className={`px-4 h-7 border-1 border-red-500 rounded-sm font-semibold ${
+            className={`px-4 h-7 border-1 border-red-500 text-sm rounded-sm font-semibold ${
               searchName === '' && selectedCategory === ''
                 ? 'bg-gray-200 text-gray-500 cursor-not-allowed'
                 : 'bg-red-500 text-white'
